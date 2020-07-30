@@ -1,0 +1,13 @@
+<div class="container">
+    <form (submit)="addCategory(categoryForm)" #categoryForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input  ngModel name="name" type="text" class="form-control" id="name" required #name='ngModel'>
+        </div>
+        <div class="alert alert-danger"
+         *ngIf="name.invalid && name.touched">
+          Please enter a category name.
+        </div>
+        <button type="submit" [disabled]="categoryForm.invalid" class="btn btn-secondary">Add Category</button>
+    </form>
+</div>
